@@ -1,0 +1,10 @@
+# Use this workspace to collaborate
+workspace:
+  id: ""
+
+localResources:
+  collections:
+    - ../Employee API.postman_collection.json
+    - ../FDE Week 1 Health.postman_collection.json
+    - ../Invoice Manager.postman_collection.json
+    - ../JSONPlaceholder.postman_collection.json
