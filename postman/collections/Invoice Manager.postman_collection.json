@@ -1,0 +1,92 @@
+{
+  "info": {
+    "_postman_id": "7fe029ef-9939-4ba4-9704-3f59234ac101",
+    "name": "Invoice Manager API",
+    "description": "CRUD requests for the local Invoice Manager FastAPI service. Start with `cd invoicecrudOperation && uvicorn main:app --reload`.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "invoiceId",
+      "value": "INV-101"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/"
+      }
+    },
+    {
+      "name": "List invoices",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/invoices"
+      }
+    },
+    {
+      "name": "Get invoice by ID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/invoices/{{invoiceId}}"
+      }
+    },
+    {
+      "name": "Create invoice",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"invoice_id\": \"INV-107\",\n  \"vendor\": \"Example Supplies\",\n  \"amount\": 1250.5,\n  \"status\": \"PENDING\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/invoices"
+      }
+    },
+    {
+      "name": "Replace invoice",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"invoice_id\": \"INV-101\",\n  \"vendor\": \"ABC Ltd\",\n  \"amount\": 85000,\n  \"status\": \"PAID\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/invoices/{{invoiceId}}"
+      }
+    },
+    {
+      "name": "Delete invoice",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/invoices/{{invoiceId}}"
+      }
+    }
+  ]
+}

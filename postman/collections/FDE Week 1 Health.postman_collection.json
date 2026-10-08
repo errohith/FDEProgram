@@ -1,0 +1,23 @@
+{
+  "info": {
+    "_postman_id": "66fec42d-a23d-4cbb-ad65-7aa6ab7ac103",
+    "name": "FDE Week 1 Health API",
+    "description": "Health endpoint for the standalone FastAPI app in src. Start with `cd src && uvicorn app:app --reload --port 8002`.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8002"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    }
+  ]
+}
